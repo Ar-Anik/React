@@ -18,6 +18,7 @@
     "jest": true
   },
   "rules": {
+    "react/jsx-boolean-value": 0,
     "react/jsx-no-bind": 0,
     "class-methods-use-this": 0,
     "react/react-in-jsx-scope": 0,
@@ -39,7 +40,7 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "printWidth": 100,
+        "printWidth": 200,
         "tabWidth": 4,
         "semi": true,
         "endOfLine": "auto"
