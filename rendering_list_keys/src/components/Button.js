@@ -2,8 +2,8 @@ import React from 'react';
 
 class Button extends React.Component{
     shouldComponentUpdate(nextProps){
-        const {change: currentChange, local : currentLocal } = this.props;
-        const {change : nextChange, local : nextLocal} = nextProps;
+        const {change: currentChange, local:currentLocal } = this.props;
+        const {change : nextChange, local:nextLocal} = nextProps;
         if(currentChange === nextChange && currentLocal === nextLocal)
             return false;
         
@@ -11,7 +11,6 @@ class Button extends React.Component{
     }
 
     render(){
-        console.log("Button Component Rendered");
         const {change, local} = this.props;
         return (
             <button type='button' onClick={() => change(local)}>Click Here</button>
