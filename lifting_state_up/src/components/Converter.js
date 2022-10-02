@@ -1,15 +1,15 @@
-export function toCelsius(fahrenheit){
+export function toCelsius(fahrenheit) {
     return ((fahrenheit - 32) * 5) / 9;
 }
 
-export function toFahrenhit(celsisu){
-    return (celsisu * (9/5)) + 32;
+export function toFahrenhit(celsius) {
+    return celsius * (9 / 5) + 32;
 }
 
-export function converter(temperature, convert){
+export function converter(temperature, convert) {
     const data = parseFloat(temperature);
 
-    if(Number.isNaN(data)){
+    if (Number.isNaN(data)) {
         return '';
     }
 
