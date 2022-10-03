@@ -1,25 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import Bracket from './Bracket';
+import Emoji from './Emoji';
+import Text from './Text_And_Bracket';
 
-function App() {
+function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Text />
+
+      <br />
+      <br />
+
+      <Emoji>
+          {({addEmoji}) => <Text addEmoji={addEmoji} />}
+      </Emoji>
+
+      <br />
+      <br />
+
+      <Bracket>
+          {({addBracket}) => <Text addBracket={addBracket} />} 
+      </Bracket>
+
+      <br />
+      <br />
+
+      <Emoji>
+          {({ addEmoji }) => ( 
+
+            <Bracket>
+
+                { ({addBracket}) => <Text addEmoji={addEmoji} addBracket={addBracket} /> }
+
+            </Bracket>
+
+          )}
+      </Emoji>
+
+      <br />
+      <br />
+
+      <Bracket>
+            
+          {({addBracket}) => (
+              <Emoji>
+
+                {({addEmoji}) => <Text addBracket={addBracket} addEmoji={addEmoji} />}
+
+              </Emoji>
+          )}
+            
+      </Bracket>
+
+    </>
   );
+
 }
 
 export default App;
