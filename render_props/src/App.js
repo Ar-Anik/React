@@ -20,7 +20,7 @@ function App() {
       <div>
         <User name={(value) => value ? "Aubdur Rob Anik" : "Guest"}/>
       </div> */}
-      <div>
+      {/* <div>
         <Counter render = {(count, incrementCount) => (
             <ClickComponentByClass count={count} incrementCount={incrementCount} />
         )} />
@@ -30,6 +30,22 @@ function App() {
         <Counter render= {(count, incrementCount) => (
           <HoverComponentByClass count={count} incrementCount={incrementCount} />
         )} />
+      </div> */}
+
+      <div>
+        <Counter>
+          {(count, incrementCount) => (
+            <ClickComponentByClass count={count} incrementCount={incrementCount} />
+          )}
+        </Counter>
+      </div>
+
+      <div>
+        <Counter>
+          {(count, incrementCount) => (
+            <HoverComponentByClass count={count} incrementCount={incrementCount} />
+          )}
+        </Counter>
       </div>
 
     </>
