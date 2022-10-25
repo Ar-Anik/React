@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ClickCounter from './component/ClickCounter';
+import Content from './component/Content';
+import Counter from './component/Counter';
+import ThemeContext from './component/ThemeContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    state = {
+        theme: 'dark',
+    };
+
+    switchTheme = () => {
+      this.setState(({ theme }) => {
+        if(theme === 'dark')
+        {
+          return { 
+            theme: 'light', 
+          };
+        }
+        else
+        {
+          return {
+            theme: 'dark',
+          };
+        }
+      });
+    };
+
+    render() {
+      const { theme } = this.state;
+
+      return (
+        <div>
+          <Counter>
+            {(count, incrementCount) => (
+              <ClickCounter count={count} incrementCount={incrementCount} />
+            )}
+          </Counter>
+
+          <ThemeContext.Provider value={{theme:theme, switchTheme:this.switchTheme}}>
+              <Content />
+          </ThemeContext.Provider>
+        </div>
+      );
+    }
 }
 
 export default App;
