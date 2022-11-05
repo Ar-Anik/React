@@ -1,11 +1,12 @@
-import Tutorial from "./components/Tutorial";
-import './CSS/light.css';
+import Tutorial from "./styled_components/Tutorial";
+import GlobalStyle from "./styles/Global.style";
 
 function App() {
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <Tutorial />
-    </div>
+    </>
   );
 }
 
