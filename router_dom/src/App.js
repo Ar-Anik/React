@@ -4,15 +4,26 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Services from './components/Services';
 
+
 function App() {
   return (
-      <Router>
-        <Navbar />
-        
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/services" component={Services} />
-      </Router>
+    <Router>
+      <Navbar/>
+      
+      <Route exact path="/services">
+        <Services/>
+      </Route>
+
+      <Route exact path="/about">
+        <About />
+      </Route>
+
+      <Route exact path="/">
+        <Home />
+      </Route>
+      
+    </Router>
+      
   );
 }
 

@@ -5,15 +5,15 @@ function Navbar() {
         <nav>
             <ul>
                 <li>
-                    <Link exact to="/">Home</Link>
+                    <Link to="/">Home</Link>
                 </li>
 
                 <li>
-                    <Link exact to="/about">About</Link>
+                    <Link to="/about">About</Link>
                 </li>
 
                 <li>
-                    <Link exact to="/services">Services</Link>
+                    <Link to="/services">Services</Link>
                 </li>
             </ul>
         </nav>
