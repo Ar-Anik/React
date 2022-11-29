@@ -1,17 +1,18 @@
-import PersonWithoutPropType from "./PersonWithoutPropType";
+import Person from "./Person";
 
-function ElementsWithoutPropType() {
+function Element() {
   return (
     <div>
-      <PersonWithoutPropType
-        name={87} //name can't be a number but it accept
+      <Person
+        // name="Aranik"
+        name={87}
         age={14}
         email="aranik@gmail.com"
-        isMarried={"false"} // it need boolean value
+        isMarried={false}
         children={[]}
       />
 
-      <PersonWithoutPropType
+      <Person
         name="Anisul Oni"
         age={15}
         email="oni@gmail.com"
@@ -19,7 +20,7 @@ function ElementsWithoutPropType() {
         children={["mota", "chota"]}
       />
 
-      <PersonWithoutPropType
+      <Person
         name="Anik Das"
         age={"bis"}
         email="anikd@gmail.com"
@@ -27,7 +28,7 @@ function ElementsWithoutPropType() {
         children={["fahim", "riju"]}
       />
 
-      <PersonWithoutPropType
+      <Person
         name="Biddut Debnath"
         age={32}
         email="biddut@gmail.com"
@@ -38,4 +39,4 @@ function ElementsWithoutPropType() {
   );
 }
 
-export default ElementsWithoutPropType;
+export default Element;

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import classes from "../styles/Person.module.css";
 
-const PersonWithPropType = (props) => {
+function Person(props) {
   return (
     <div className={classes.Person}>
       <h3>{props.name}</h3>
@@ -17,14 +17,14 @@ const PersonWithPropType = (props) => {
       </ul>
     </div>
   );
-};
+}
 
-PersonWithPropType.propTypes = {
+Person.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   email: PropTypes.string,
   isMarried: PropTypes.bool,
-  children: PropTypes.arrayOf(PropTypes.string),
+  children: PropTypes.arrayOf(PropTypes.string.isRequired),
 };
 
-export default PersonWithPropType;
+export default Person;

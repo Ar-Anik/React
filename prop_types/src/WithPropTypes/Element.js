@@ -1,41 +1,42 @@
-import PersonWithPropType from "./PersonWithPropType";
+import Person from "./Person";
 
-function ElementsWithPropType() {
+function Element() {
   return (
     <div>
-      <PersonWithPropType
+      <Person
+        // name="Aranik"
         name={87}
-        age={14}
+        age="43"
         email="aranik@gmail.com"
-        isMarried={"true"}
+        isMarried={false}
         children={[]}
       />
 
-      <PersonWithPropType
+      <Person
         name="Anisul Oni"
-        age={"15"}
+        age={15}
         email="oni@gmail.com"
-        isMarried={"false"}
+        isMarried="true"
         children={["mota", "chota"]}
       />
 
-      <PersonWithPropType
+      <Person
         name="Anik Das"
         age={"bis"}
         email="anikd@gmail.com"
-        isMarried={false}
+        isMarried={true}
         children={["fahim", "riju"]}
       />
 
-      <PersonWithPropType
+      <Person
         name="Biddut Debnath"
         age={32}
         email="biddut@gmail.com"
-        isMarried={true}
+        isMarried={false}
         children={[]}
       />
     </div>
   );
 }
 
-export default ElementsWithPropType;
+export default Element;

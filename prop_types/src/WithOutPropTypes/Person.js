@@ -1,12 +1,12 @@
 import classes from "../styles/Person.module.css";
 
-const PersonWithoutPropType = (props) => {
+function Person(props) {
   return (
     <div className={classes.Person}>
       <h3>{props.name}</h3>
       <h3>{props.age}</h3>
       <h3>{props.email}</h3>
-      <h3>{props.isMarried}</h3>
+      <h3>{`${props.isMarried}`}</h3>
       <h3>Children:</h3>
 
       <ul>
@@ -16,6 +16,6 @@ const PersonWithoutPropType = (props) => {
       </ul>
     </div>
   );
-};
+}
 
-export default PersonWithoutPropType;
+export default Person;

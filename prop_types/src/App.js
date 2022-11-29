@@ -1,9 +1,9 @@
-import ElementsWithPropType from "./components/ElementsWithPropType";
+// import Element from "./WithOutPropTypes/Element";
+// import Element from "./WithPropTypes/Element";
 
-// import ElementsWithoutPropType from "./components/ElementsWithoutPropType";
+import Element from "./WithPropTypes_1/Element";
 function App() {
-  // return <ElementsWithoutPropType />;
-  return <ElementsWithPropType />;
+  return <Element />;
 }
 
 export default App;
