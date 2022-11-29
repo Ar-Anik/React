@@ -1,5 +1,5 @@
-import classes from "../styles/Person.module.css";
 import PropTypes from "prop-types";
+import classes from "../styles/Person.module.css";
 
 const PersonWithPropType = (props) => {
   return (
@@ -7,7 +7,7 @@ const PersonWithPropType = (props) => {
       <h3>{props.name}</h3>
       <h3>{props.age}</h3>
       <h3>{props.email}</h3>
-      <h3>{props.isMarried}</h3>
+      <h3>{`${props.isMarried}`}</h3>
       <h3>Children:</h3>
 
       <ul>
@@ -19,7 +19,7 @@ const PersonWithPropType = (props) => {
   );
 };
 
-PersonWithPropType.prototype = {
+PersonWithPropType.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
   email: PropTypes.string,
