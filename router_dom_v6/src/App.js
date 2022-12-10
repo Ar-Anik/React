@@ -13,11 +13,11 @@ function App() {
           <Redirect to="/hello" />
         </Route>
 
-        <Route exact to="/hello" component={Hello} />
+        <Route exact path="/hello" component={Hello} />
 
-        <Route exact to="/posts" component={Post} />
+        <Route exact path="/posts" component={Post} />
 
-        <Route exact to="/posts/:postId" component={Posts} />
+        <Route exact path="/posts/:postId" component={Posts} />
       </Switch>
     </>
   );
