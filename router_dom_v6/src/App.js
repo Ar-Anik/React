@@ -1,24 +1,27 @@
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "../src/components/Header";
 import Post from "../src/components/Post";
 import Posts from "../src/components/Posts";
+import Error from "./components/Error";
 import Hello from "./components/Hello";
 
 function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <Redirect to="/hello" />
+      <Routes>
+        <Route path="/" element={<Navigate to="/hello" />} />
+
+        <Route path="/hello/*" element={<Hello />}>
+          <Route path="new" element={<p>I love let finish HW.</p>} />
         </Route>
 
-        <Route exact path="/hello" component={Hello} />
+        <Route path="/posts" element={<Posts />} />
 
-        <Route exact path="/posts" component={Post} />
+        <Route path="/posts/:postId" element={<Post />} />
 
-        <Route exact path="/posts/:postId" component={Posts} />
-      </Switch>
+        <Route path="*" element={<Error />} />
+      </Routes>
     </>
   );
 }

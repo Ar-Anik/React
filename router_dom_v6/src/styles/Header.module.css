@@ -1,4 +1,8 @@
 .active {
-  color: blue;
+  color: tomato;
   text-decoration: none;
+}
+
+.btn button {
+  margin: 10px;
 }
