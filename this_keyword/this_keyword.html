@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+</head>
+<body>
+    <h1>Play With This Keyword</h1>
+    <script>
+        // Regular functions have their own `this` context, which is determined by how the function is called.
+        // Arrow functions don't have their own `this`. They inherit `this` from the surrounding context where they are defined.
+
+        /* way-1
+    
+        const javascript = {
+            name : "Javascript",
+            libraries : ['React', 'Vue', "NextJS"],
+            printLibraries : function () {
+                console.log("Outside of forloop : ", this);
+                this.libraries.forEach(function(library){
+                    console.log("Inside of forloop : ", this);
+                    console.log(`${this.name} have ${library}`)
+                })
+            }
+        }
+
+        javascript.printLibraries(); */
+
+
+        /* way-2
+
+        const javascript = {
+            name : "Javascript",
+            libraries : ['React', 'Vue', 'NextJS'],
+            printLibraries : function(){
+                this.libraries.forEach((library) => {
+                    console.log(`${this.name} have ${library}`);
+                })
+            }
+        }
+
+        javascript.printLibraries(); */
+
+
+        /* way-3
+        
+        const javascript = {
+            name : "Javascript",
+            libraries : ['React', 'Vue', 'NextJS'],
+            printLibraries : function() {
+                javascript.libraries.forEach(function(library) {
+                    console.log(`${javascript.name} have ${library}`);
+                })
+            }
+        }
+
+        javascript.printLibraries(); */
+
+        
+        /* way-4
+        
+        const javascript = {
+            name : "Javascript",
+            libraries : ['React', 'Vue', 'NextJS'],
+            printLibraries : function() {
+                const self = this;
+                this.libraries.forEach(function(library) {
+                    console.log(`${self.name} have ${library}`);
+                })
+            }
+        }
+
+        javascript.printLibraries(); */
+
+
+        const javascript = {
+            name : "Javascript",
+            libraries : ['React', 'Vue', 'NextJS'],
+            printLibraries : function() {
+                this.libraries.forEach(function(library) {
+                    console.log(`${this.name} have ${library}`);
+                }.bind(this))
+            }
+        }
+
+        javascript.printLibraries();
+        
+    </script>
+</body>
+</html>
